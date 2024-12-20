@@ -16,19 +16,19 @@ def audio_to_text(audio_path):
     except sr.RequestError:
         return "Sorry, I'm unable to reach the speech recognition service."
 
-# Path to the audio file
-audio_path = "/Users/rubinaalmas/Downloads/audio.wav"
 
-# Get the audio-to-text description
+audio_path = "audio_path_to_the_audio_from reel"
+
+#audio-to-text description
 audio_text = audio_to_text(audio_path)
 
-# Create a DataFrame with two columns
+# dataFrame 
 df = pd.DataFrame({
     'number': range(1, 1001),  # Numbers from 1 to 1000
     'audio_description': [audio_text] * 1000  # Same text in all rows
 })
 
-# Save the DataFrame to a CSV file (optional)
+# CSV file
 df.to_csv("/Users/rubinaalmas/Downloads/audio_text_output.csv", index=False)
 
 print("DataFrame created with 1000 rows and saved to 'audio_text_output.csv'.")
